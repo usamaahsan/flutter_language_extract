@@ -20,26 +20,42 @@
 
 ## Installation
 
-### Global activation (recommended)
+### Option 1 — Global activation (recommended)
+
+Install once, run from any directory:
 
 ```bash
 dart pub global activate language_extract
 ```
 
-Then run from anywhere:
+Then run from anywhere in your terminal:
 
 ```bash
 language_extract getx /path/to/my_flutter_app --locales en_US,ar_AR
 ```
 
-### Run from source
+### Option 2 — Add as a dev dependency
+
+Add to your Flutter project's `pubspec.yaml`:
+
+```yaml
+dev_dependencies:
+  language_extract: ^1.0.0
+```
+
+Then install:
 
 ```bash
-git clone https://github.com/usamaahsan/flutter_language_extract.git
-cd flutter_language_extract
-dart pub get
-dart run bin/language_extract.dart getx /path/to/my_flutter_app --locales en_US,ar_AR
+flutter pub get
 ```
+
+And run via `dart run`:
+
+```bash
+dart run language_extract getx . --locales en_US,ar_AR
+```
+
+> Note: `.` points to the current directory (your project root).
 
 ---
 
@@ -415,6 +431,33 @@ The scanner detects strings in these built-in Flutter widgets:
 - Dart SDK `>=3.0.0`
 - A Flutter project with the standard structure (`pubspec.yaml` + `lib/` at the root)
 - Pass the **project root** as `<project_path>` — the tool automatically scans `lib/` and writes output relative to that root
+
+---
+
+## Contributing
+
+Contributions are welcome! Please open an issue first to discuss what you'd like to change.
+
+### Run from source
+
+```bash
+git clone https://github.com/usamaahsan/flutter_language_extract.git
+cd flutter_language_extract
+dart pub get
+dart run bin/language_extract.dart getx /path/to/my_flutter_app --locales en_US,ar_AR
+```
+
+### Run tests
+
+```bash
+dart test
+```
+
+### Analyze
+
+```bash
+dart analyze
+```
 
 ---
 
