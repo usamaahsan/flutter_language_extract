@@ -35,8 +35,8 @@ language_extract getx /path/to/my_flutter_app --locales en_US,ar_AR
 ### Run from source
 
 ```bash
-git clone https://github.com/your-org/language_extract.git
-cd language_extract
+git clone https://github.com/usamaahsan/flutter_language_extract.git
+cd flutter_language_extract
 dart pub get
 dart run bin/language_extract.dart getx /path/to/my_flutter_app --locales en_US,ar_AR
 ```
