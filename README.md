@@ -45,6 +45,17 @@ dart run bin/language_extract.dart getx /path/to/my_flutter_app --locales en_US,
 
 ## Quick start
 
+> **Important:** `<project_path>` must be the **Flutter project root** — the folder that contains `pubspec.yaml` and `lib/`.
+> Do **not** point it at the `lib/` folder itself, or the tool will fail looking for `lib/lib/`.
+
+```bash
+# Correct — project root
+language_extract getx ~/projects/myapp --locales en_US,ar_AR
+
+# Wrong — do not point at lib/
+language_extract getx ~/projects/myapp/lib --locales en_US,ar_AR
+```
+
 ```bash
 # 1. Scan and generate locale files (dry run — source untouched)
 language_extract getx /path/to/app --locales en_US,ar_AR
@@ -402,7 +413,8 @@ The scanner detects strings in these built-in Flutter widgets:
 ## Requirements
 
 - Dart SDK `>=3.0.0`
-- A Flutter project (the tool reads `pubspec.yaml` and scans `lib/`)
+- A Flutter project with the standard structure (`pubspec.yaml` + `lib/` at the root)
+- Pass the **project root** as `<project_path>` — the tool automatically scans `lib/` and writes output relative to that root
 
 ---
 
