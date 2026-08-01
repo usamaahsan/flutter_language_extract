@@ -1,3 +1,8 @@
+## 1.0.1
+
+- Improved README: restructured installation section with global activation and dev dependency options.
+- Moved "Run from source" to Contributing section.
+
 ## 1.0.0
 
 - Initial release.

@@ -3,7 +3,7 @@ description: >-
   CLI tool that scans Flutter projects for hardcoded strings and generates
   localization files for GetX, easy_localization, and intl. Supports
   --replace to rewrite source files with .tr calls automatically.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/usamaahsan/flutter_language_extract
 issue_tracker: https://github.com/usamaahsan/flutter_language_extract/issues
 topics:
