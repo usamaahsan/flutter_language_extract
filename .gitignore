@@ -1,0 +1,20 @@
+# Dart tool cache
+.dart_tool/
+
+# pub package manager files
+.packages
+pubspec.lock
+
+# Build output
+build/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# macOS
+.DS_Store
+
+# Test coverage
+coverage/
