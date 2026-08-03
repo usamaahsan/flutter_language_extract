@@ -20,7 +20,7 @@
 
 ## Installation
 
-### Option 1 — Global activation (recommended)
+### Installation
 
 Install once, run from any directory:
 
@@ -34,28 +34,6 @@ Then run from anywhere in your terminal:
 language_extract getx /path/to/my_flutter_app --locales en_US,ar_AR
 ```
 
-### Option 2 — Add as a dev dependency
-
-Add to your Flutter project's `pubspec.yaml`:
-
-```yaml
-dev_dependencies:
-  language_extract: ^1.0.0
-```
-
-Then install:
-
-```bash
-flutter pub get
-```
-
-And run via `dart run`:
-
-```bash
-dart run language_extract getx . --locales en_US,ar_AR
-```
-
-> Note: `.` points to the current directory (your project root).
 
 ---
 
