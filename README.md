@@ -28,10 +28,12 @@ Install once, run from any directory:
 dart pub global activate language_extract
 ```
 
+If the `language_extract` command is not found after activation, you need to add the pub cache bin directory to your PATH. See the [Dart guide for all platforms](https://dart.dev/tools/pub/cmd/pub-global#running-a-script-from-your-path).
+
 Then run from anywhere in your terminal:
 
 ```bash
-language_extract getx /path/to/my_flutter_app --locales en_US,ar_AR
+language_extract getx /path/to/my_flutter_app --locales=en_US,ar_AR
 ```
 
 
@@ -44,24 +46,24 @@ language_extract getx /path/to/my_flutter_app --locales en_US,ar_AR
 
 ```bash
 # Correct — project root
-language_extract getx ~/projects/myapp --locales en_US,ar_AR
+language_extract getx ~/projects/myapp --locales=en_US,ar_AR
 
 # Wrong — do not point at lib/
-language_extract getx ~/projects/myapp/lib --locales en_US,ar_AR
+language_extract getx ~/projects/myapp/lib --locales=en_US,ar_AR
 ```
 
 ```bash
 # 1. Scan and generate locale files (dry run — source untouched)
-language_extract getx /path/to/app --locales en_US,ar_AR
+language_extract getx /path/to/app --locales=en_US,ar_AR
 
 # 2. Also rewrite source files (adds .tr calls, removes const, adds imports)
-language_extract getx /path/to/app --locales en_US,ar_AR --replace
+language_extract getx /path/to/app --locales=en_US,ar_AR --replace
 
 # 3. Use easy_localization instead
-language_extract easy_localization /path/to/app --locales en,ar --replace
+language_extract easy_localization /path/to/app --locales=en,ar --replace
 
 # 4. Use the intl package
-language_extract intl /path/to/app --locales en_US,ar_AR --replace
+language_extract intl /path/to/app --locales=en_US,ar_AR --replace
 ```
 
 ---
@@ -77,29 +79,29 @@ Packages:
   intl               intl / flutter gen-l10n — generates lib/l10n/app_*.arb
 
 Options:
-  -l, --locales        Comma-separated list of locales  [required]
-                       e.g. --locales en_US,ar_AR,fr_FR
-  -s, --source-locale  Which locale to use as the source (values from code).
-                       Must be one of the --locales values.
-                       Defaults to the first locale in the list.
-  -r, --replace        Rewrite source files with localized calls.
-  -h, --help           Show this help message.
+  -l, --locales=<locales>        Comma-separated list of locales  [required]
+                                 e.g. --locales=en_US,ar_AR,fr_FR
+  -s, --source-locale=<locale>   Which locale to use as the source (values from code).
+                                 Must be one of the --locales values.
+                                 Defaults to the first locale in the list.
+  -r, --replace                  Rewrite source files with localized calls.
+  -h, --help                     Show this help message.
 ```
 
 ### Examples
 
 ```bash
 # GetX — English source, add Arabic
-language_extract getx ~/projects/myapp --locales en_US,ar_AR --source-locale en_US
+language_extract getx ~/projects/myapp --locales=en_US,ar_AR --source-locale=en_US
 
 # easy_localization — three locales, rewrite source
 language_extract easy_localization ~/projects/myapp \
-  --locales en,ar,fr \
-  --source-locale en \
+  --locales=en,ar,fr \
+  --source-locale=en \
   --replace
 
 # intl — default source locale (first in list)
-language_extract intl ~/projects/myapp --locales en_US,ar_AR --replace
+language_extract intl ~/projects/myapp --locales=en_US,ar_AR --replace
 ```
 
 ---

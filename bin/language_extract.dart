@@ -1,7 +1,13 @@
 import 'dart:io';
 
 import 'package:args/args.dart';
-import 'package:language_extract/language_extract.dart';
+import 'package:language_extract/src/generators/base_generator.dart';
+import 'package:language_extract/src/generators/easy_localization_generator.dart';
+import 'package:language_extract/src/generators/getx_generator.dart';
+import 'package:language_extract/src/generators/intl_generator.dart';
+import 'package:language_extract/src/replacer/source_replacer.dart';
+import 'package:language_extract/src/scanner/file_scanner.dart';
+import 'package:language_extract/src/utils/key_generator.dart';
 
 const _supportedPackages = ['getx', 'intl', 'easy_localization'];
 
