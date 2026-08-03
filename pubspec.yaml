@@ -13,6 +13,9 @@ topics:
   - getx
   - cli
 
+executables:
+  language_extract:
+
 environment:
   sdk: ^3.0.0
 
