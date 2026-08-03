@@ -128,6 +128,22 @@ Future<void> main(List<String> arguments) async {
   // 3. Replace source files (opt-in)
   // ---------------------------------------------------------------------------
   if (shouldReplace) {
+    stdout.writeln(
+      '\n⚠️  WARNING: --replace will rewrite your source files.\n'
+      '   Every hardcoded string found in lib/ will be replaced with a\n'
+      '   localized call. This cannot be automatically undone.\n'
+      '\n'
+      '   Make sure you have committed your changes or created a backup\n'
+      '   before continuing.\n',
+    );
+    stdout.write('   Continue? [y/N] ');
+
+    final input = stdin.readLineSync()?.trim().toLowerCase();
+    if (input != 'y') {
+      stdout.writeln('Aborted.');
+      exit(0);
+    }
+
     stdout.writeln('\nReplacing hardcoded strings in source files...\n');
     await SourceReplacer().replace(
       strings: strings,

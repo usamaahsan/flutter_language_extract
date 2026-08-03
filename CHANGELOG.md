@@ -1,3 +1,8 @@
+## 1.0.2
+
+- README: removed dev_dependency installation option — tool should be installed via `dart pub global activate` to avoid transitive `meta` version conflicts with the Flutter SDK.
+- Added confirmation prompt before `--replace` rewrites source files. Warns user to back up or commit first, defaults to N.
+
 ## 1.0.1
 
 - Improved README: restructured installation section with global activation and dev dependency options.
