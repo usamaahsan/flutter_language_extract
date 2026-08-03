@@ -1,3 +1,7 @@
+## 1.0.3
+
+- Added `executables` field to `pubspec.yaml` — pub.dev now shows `dart pub global activate` on the Installing tab instead of `dart pub add`.
+
 ## 1.0.2
 
 - README: removed dev_dependency installation option — tool should be installed via `dart pub global activate` to avoid transitive `meta` version conflicts with the Flutter SDK.
