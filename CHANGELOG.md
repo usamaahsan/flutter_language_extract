@@ -1,3 +1,9 @@
+## 1.0.4
+
+- README: replaced platform-specific PATH instructions with link to official Dart guide (covers macOS, Linux, Windows).
+- README: all CLI option examples now use `=` syntax (`--locales=en_US,ar_AR`, `--source-locale=en_US`).
+- Removed public `lib/language_extract.dart` barrel — package now correctly shows only as an executable on pub.dev, not as a library dependency.
+
 ## 1.0.3
 
 - Added `executables` field to `pubspec.yaml` — pub.dev now shows `dart pub global activate` on the Installing tab instead of `dart pub add`.
